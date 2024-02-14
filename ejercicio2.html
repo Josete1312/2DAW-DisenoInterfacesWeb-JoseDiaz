@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con HTML5</title>
+    <link rel="stylesheet" href="estilos/ejercicio2.css">
+</head>
+<body>
+<h1>Formulario de datos personales</h1>
+<form action="#" method="post">
+    <fieldset>
+        <legend>Datos personales</legend>
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" pattern="[A-Za-záéíóúüñÁÉÍÓÚÜÑ][A-Za-záéíóúüñÁÉÍÓÚÜÑ\s\.\-ºª]{2,24}[A-Za-záéíóúüñÁÉÍÓÚÜÑ]" placeholder="Nombre de la persona" required>
+        </div>
+        <br>
+        <div>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" pattern="[A-Za-záéíóúüñÁÉÍÓÚÜÑ][A-Za-záéíóúüñÁÉÍÓÚÜÑ\s\.\-]{4,29}[A-Za-záéíóúüñÁÉÍÓÚÜÑ]" placeholder="Apellidos de la persona" required>
+        </div>
+        <br>
+        <div>
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required>
+        </div>
+        <br>
+        <div>
+            <label for="comunidad">Comunidad Autónoma:</label>
+            <input type="text" id="comunidad" name="comunidad" list="comunidades" placeholder="Escribe o selecciona tu comunidad autónoma">
+            <datalist id="comunidades">
+                <option value="Andalucía">
+                <option value="Aragón">
+                <option value="Asturias">
+                <option value="Baleares">
+                <option value="Canarias">
+                <option value="Cantabria">
+                <option value="Castilla y León">
+                <option value="Castilla-La Mancha">
+                <option value="Cataluña">
+                <option value="Comunidad Valenciana">
+                <option value="Extremadura">
+                <option value="Galicia">
+                <option value="La Rioja">
+                <option value="Madrid">
+                <option value="Murcia">
+                <option value="Navarra">
+                <option value="País Vasco">
+                <option value="Ceuta">
+                <option value="Melilla">
+            </datalist>
+        </div>
+        <br>
+        <div>
+            <label for="telefono">Teléfono de contacto:</label>
+            <input type="tel" id="telefono" name="telefono" pattern="[6-9]\d{8}" placeholder="nueve digitos" required>
+        </div>
+        <br>
+        <div>
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña" minlength="8" maxlength="14" placeholder="Entre 8 y 14 caracteres">
+        </div>
+        <br>
+        <div>
+            <label for="fecha">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha" name="fecha">
+        </div>
+        <br>
+        <div>
+            <label for="pagina_web">Página Web personal:</label>
+            <input type="url" id="pagina_web" name="pagina_web" placeholder="https://www.mipagina.com">
+        </div>
+        <br>
+        <div>
+            <label for="email">Dirección de Correo Electrónico:</label>
+            <input type="email" id="email" name="email" pattern="https?://.*" placeholder="yomismo@mipagina.com" required>
+        </div>
+        <br>
+        <div>
+            <label for="color">Color preferido:</label>
+            <input type="color" id="color" name="color" value="#00ff00">
+        </div>
+        <br>
+        <div>
+            <label for="mespref">Selecciona el mes preferido del Año</label>
+            <input type="month" id="mespref" name="mespref">
+        </div>
+        <br>
+        <div>
+            <label for="semana">Mejor semana de tus vacaciones</label>
+            <input type="week" id="semana" name="semana">
+        </div>
+        <br>
+        <div>
+            <label for="entrada">Hora de entrada a trabaja</label>
+            <input type="datetime" id="entrada" name="entrada">
+        </div>
+        <br>
+        <div>
+            <label for="horas">Horas semanales de Trabajo</label>
+            <input type="range" id="horas" name="horas" min="3" max="15" step="2" value="5">
+            <output for="horas">2</output>€
+        </div>
+        <br>
+        <div>
+            <label for="precio_hora">Precio por hora trabajada:</label>
+            <input type="number" id="precio_hora" name="precio_hora" value="5" oninput="sueldo.value = parseInt(horas.value) * parseInt(precio_hora.value);">
+        </div>
+        <br>
+        <div>
+            <label for="sueldo">Sueldo:</label>
+            <output id="sueldo" name="sueldo">10</output>€
+        </div>
+        <br>
+    </fieldset>
+    <br>
+    <input type="submit" value="Enviar">
+</form>
+
+</body>
+</html>
